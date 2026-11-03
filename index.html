@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HUB 3DS-A · Estela Amaya · Repaso 2026</title>
+  <meta name="description" content="HUB 3DS-A: portal de repaso de los módulos de 3.º Bachillerato en Desarrollo de Software «A», INDEL 2026.">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#modulos">Ir a los módulos</a>
+  <header class="top">
+    <a class="logo" href="#inicio">HUB 3DS-A</a>
+    <nav aria-label="Principal">
+      <a href="#inicio">Inicio</a><a href="#modulos">Módulos</a><a href="#juegos">Zona de retos</a><a href="#autora">Autora</a>
+      <button id="tema" type="button" aria-pressed="false">Modo claro</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-txt">
+        <p class="kicker">Repaso integral 2026 · 3DS·A · INDEL</p>
+        <h1>Aprender, crear y descubrir: nuestro año de software.</h1>
+        <p class="lead"><span id="n-mod">10</span> fichas de aprendizaje de <span id="n-doc">3</span> docentes, reunidas para repasar jugando.</p>
+        <a class="cta" href="#modulos">Empezar a repasar</a>
+        <div class="progreso" role="group" aria-label="Mi progreso">
+          <div class="barra"><div id="relleno"></div></div>
+          <p><strong id="rep">0</strong> de <strong id="total">0</strong> módulos repasados · <span id="insignia">Aún sin insignia: abre una ficha y empieza.</span></p>
+        </div>
+      </div>
+      <img class="hero-img" src="img/hero-mapa.svg" width="220" height="220"
+           alt="Ilustración de un camino con puntos conectados que representan los módulos del año, hasta una bandera al final.">
+    </section>
+
+    <section id="modulos" aria-labelledby="t-mod">
+      <h2 id="t-mod">Mapa de módulos</h2>
+      <div class="controles">
+        <label class="buscar"><span class="vh">Buscar módulos</span>
+          <input id="q" type="search" placeholder="Busca un módulo, programa o herramienta (atajo: /)" autocomplete="off">
+        </label>
+        <div id="filtros" class="filtros" role="group" aria-label="Filtrar por docente"></div>
+      </div>
+      <p id="estado" class="estado" aria-live="polite"></p>
+      <noscript><p class="estado">Este portal pinta los módulos con JavaScript. Actívalo en tu navegador para verlos.</p></noscript>
+      <div id="lista" class="grid"></div>
+    </section>
+
+    <section id="juegos" aria-labelledby="t-juegos">
+      <h2 id="t-juegos">Zona de retos · Arcade 3DS-A</h2>
+      <p class="estado">Ponte a prueba con desafíos rápidos. Cada ronda elige una pregunta de los módulos.</p>
+      <div class="autora game-box">
+        <h3>⚡ Reto relámpago</h3>
+        <p id="reto-pregunta">Presiona el botón para recibir un desafío sorpresa.</p>
+        <div id="reto-opciones" class="reto-opciones"></div>
+        <p id="reto-feedback" class="fb" aria-live="polite"></p>
+        <button id="nuevo-reto" class="cta" type="button">Generar desafío</button>
+        <p><strong>Racha:</strong> <span id="racha">0</span> respuestas correctas</p>
+      </div>
+      <div class="autora game-box">
+        <h3>🧠 Misión: detective de conceptos</h3>
+        <p>Lee la pista y elige el concepto correcto.</p>
+        <p id="pista-texto">Pista: organiza información en tablas y permite consultarla.</p>
+        <div id="detective-opciones" class="reto-opciones"></div>
+        <p id="detective-feedback" class="fb" aria-live="polite"></p>
+        <button id="nueva-pista" class="cta" type="button">Otra pista</button>
+      </div>
+      <div class="autora game-box">
+        <h3>🌱 Reto cooperativo: todos aportan</h3>
+        <p>Imagina que seis campesinos forman una cooperativa. Cada integrante aporta una tarea: producción, registro, compras, distribución, ventas o comunicación. ¿Qué principio permite tomar decisiones entre todos?</p>
+        <button class="op coop-op" data-correct="false" type="button">Que una sola persona decida siempre</button>
+        <button class="op coop-op" data-correct="true" type="button">Participación y decisión democrática</button>
+        <button class="op coop-op" data-correct="false" type="button">Que cada quien trabaje sin coordinarse</button>
+        <p id="coop-feedback" class="fb" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section id="autora" aria-labelledby="t-aut">
+      <h2 id="t-aut">Autora</h2>
+      <div class="autora">
+        <h3>Estela Amaya · Equipo HUB 3DS-A</h3>
+        <p>Portal académico del equipo HUB 3DS-A, integrado por seis personas. Fichas elaboradas para repasar los aprendizajes de 3.º Bachillerato Técnico Vocacional en Desarrollo de Software «A».</p>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="ficha" aria-labelledby="f-titulo"><div id="f-cont"></div></dialog>
+  <footer><p>INDEL · 3.º Bachillerato Técnico Vocacional en Desarrollo de Software «A» · 2026 · HUB 3DS-A</p></footer>
+
+  <script src="data/modulos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
