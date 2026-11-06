@@ -1,4 +1,4 @@
-# Registro de prompts de IA · HUB 3DS·A
+# Registro de prompts de IA · Portal de módulos
 
 Este documento registra prompts que pueden utilizarse para apoyar el trabajo. Conserva únicamente los prompts que realmente hayas enviado y añade la respuesta útil y la verificación que realizaste.
 

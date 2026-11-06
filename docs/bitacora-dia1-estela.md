@@ -14,7 +14,7 @@
 
 
 ## Datos confirmados para las fichas
-- Empresa de software del equipo: **HUB 3DS-A**.
+- Empresa de software del equipo: **Auralix**.
 - Integrantes del equipo: **6**.
 - Proyecto de tesis: documentación de la creación de la **base de datos de una cafetería**.
 - Módulo adicional de Julio Nelson Portillo: **Cooperativismo**, con contenidos sobre campesinos, productores y organización en cooperativas.

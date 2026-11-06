@@ -3,7 +3,7 @@
 **Estado:** borrador académico para discutir y consensuar con todos los integrantes del grupo. No representa un acuerdo definitivo ni datos reales de una empresa registrada.
 
 ## 1. Nombre propuesto
-**HUB 3DS-A**
+**Auralix**
 
 Nombre proporcionado por la estudiante para la empresa de software del equipo. El grupo está integrado por seis personas.
 
@@ -50,9 +50,10 @@ Los montos siguientes son estimaciones para practicar la elaboración del plan; 
 Una persona puede asumir más de un rol si el tamaño del equipo lo requiere.
 
 ## 7. Acuerdos pendientes del grupo
-- [x] Nombre indicado por el equipo: HUB 3DS-A. Confirmar que los seis integrantes mantienen su aprobación.
+- [x] Nombre indicado por el equipo: Auralix. Confirmar que los seis integrantes mantienen su aprobación.
 - [ ] Definir los servicios definitivos.
-- [x] Número de integrantes confirmado: seis.\n- [ ] Acordar los aportes individuales.
+- [x] Número de integrantes confirmado: seis.
+- [ ] Acordar los aportes individuales.
 - [ ] Cotizar dominio, hosting y otros recursos.
 - [ ] Aprobar el monto final de inversión.
 - [ ] Definir responsables y fechas.

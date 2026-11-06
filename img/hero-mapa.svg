@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="t d">
+  <title id="t">Mapa del año</title>
+  <desc id="d">Puntos unidos por un camino curvo que representan los módulos del año, hasta una bandera al final.</desc>
+  <path d="M40 270 C 40 200, 140 230, 130 170 S 60 120, 120 80 S 250 90, 280 40"
+        fill="none" stroke="#98a2cf" stroke-width="4" stroke-dasharray="3 10" stroke-linecap="round"/>
+  <g stroke="#98a2cf" stroke-width="3">
+    <circle cx="40"  cy="270" r="16" fill="#7c9cff"/>
+    <circle cx="84"  cy="226" r="14" fill="none"/>
+    <circle cx="130" cy="170" r="16" fill="#7c9cff"/>
+    <circle cx="82"  cy="122" r="14" fill="none"/>
+    <circle cx="120" cy="80"  r="16" fill="#7c9cff"/>
+    <circle cx="190" cy="88"  r="14" fill="none"/>
+    <circle cx="250" cy="76"  r="16" fill="#7c9cff"/>
+    <circle cx="280" cy="40"  r="18" fill="#7c9cff"/>
+  </g>
+  <path d="M280 22v-16M280 6l16 6-16 6" fill="none" stroke="#98a2cf" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
