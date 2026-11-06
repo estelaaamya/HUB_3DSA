@@ -48,3 +48,21 @@ Este documento registra prompts que pueden utilizarse para apoyar el trabajo. Co
 ## 8. Explicar cooperativismo con un caso agrícola
 **Prompt:**
 > Explica el cooperativismo con un ejemplo ficticio de campesinos que se organizan para producir, distribuir y vender sus productos. Incluye participación democrática, solidaridad, responsabilidades y beneficios comunes. Distingue el ejemplo inventado de los contenidos exactos vistos en clase.
+
+## 9. Ordenar las actividades de cada módulo
+**Prompt:**
+> Con estas notas de clase, escribe para cada módulo una lista numerada de actividades realizadas, en orden cronológico y en primera persona. Usa solo la información que te doy; si un dato no está confirmado, agrégalo entre paréntesis con la palabra «confirmar». No inventes prácticas ni instrumentos.
+
+**Uso y verificación:** comparar cada lista con el cuaderno y corregir en `data/modulos.js`.
+
+## 10. Armar el plan de inversión de Auralix
+**Prompt:**
+> Con estos servicios y precios de referencia, arma un plan de inversión inicial para una empresa académica de software de seis integrantes. Separa inversión inicial y costos mensuales, calcula el punto de equilibrio y un flujo de caja conservador a seis meses. Indica que los montos son estimados y que deben cotizarse. No inventes clientes ni ingresos reales.
+
+**Uso y verificación:** revisar las operaciones y ajustar los montos con cotizaciones locales antes de presentarlo al grupo.
+
+## 11. Agregar una práctica general al quiz
+**Prompt:**
+> Agrega al portal un botón «Practicar» que mezcle cinco preguntas de todos los módulos sin repetirlas, corrija al instante, muestre el puntaje final y guarde el mejor resultado en `localStorage`. Debe funcionar con teclado y no romper el quiz por módulo. Explícame cómo probarlo.
+
+**Uso y verificación:** responder la práctica completa con teclado, recargar la página y comprobar que el mejor puntaje sigue guardado.

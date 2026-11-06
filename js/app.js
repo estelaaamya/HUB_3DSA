@@ -109,7 +109,7 @@ document.addEventListener("keydown", e => {
 
 function coincide(m) {
   const base = norm([m.nombre, m.docente, m.colabora || "", m.resumen,
-    ...m.herramientas, ...m.programas, ...m.instrumentos].join(" "));
+    ...m.herramientas, ...m.programas, ...m.instrumentos, ...(m.actividades || [])].join(" "));
   const delDocente = docente === "Todos" || m.docente === docente || m.colabora === docente;
   return delDocente && base.includes(texto);
 }
@@ -143,7 +143,7 @@ function tarjeta(m) {
   c.append(ul);
 
   if (hechos[m.id]) {
-    c.append(el("p", "Repasado" + (notas[m.id] != null ? " · quiz " + notas[m.id] + "/3" : ""), "sello"));
+    c.append(el("p", "Repasado" + (notas[m.id] != null ? " · mejor quiz " + notas[m.id] + "/" + m.quiz.length : ""), "sello"));
   }
   c.append(boton("Abrir ficha", "abrir", () => abrirFicha(m)));
   return c;
@@ -165,6 +165,15 @@ function seccion(titulo, items) {
   const ul = el("ul");
   items.forEach(i => ul.append(itemLista(i)));
   f.append(el("h3", titulo), ul);
+  return f;
+}
+
+// Actividades de clase: lista numerada (se lee como una secuencia de trabajo).
+function seccionActividades(items) {
+  const f = document.createDocumentFragment();
+  const ol = el("ol", null, "acts");
+  items.forEach(i => ol.append(itemLista(i)));
+  f.append(el("h3", "Actividades realizadas"), ol);
   return f;
 }
 
@@ -223,12 +232,18 @@ function abrirFicha(m) {
   const box = $("f-cont");
   const titulo = el("h2", m.nombre);
   titulo.id = "f-titulo";
-  box.replaceChildren(
+
+  const partes = [
     boton("Cerrar", "cerrar", () => $("ficha").close()),
     titulo,
     el("p", lineaDocente(m), "docente"),
     el("p", m.resumen),
     seccion("Tres cosas que aprendí", m.aprendizajes),
+  ];
+  if (m.actividades && m.actividades.length) {
+    partes.push(seccionActividades(m.actividades));
+  }
+  partes.push(
     seccion("Instrumentos", m.instrumentos),
     seccion("Programas", m.programas),
     seccion("Herramientas", m.herramientas),
@@ -236,6 +251,7 @@ function abrirFicha(m) {
     seccionEnlaces("Evidencias", m.evidencias || [], "Aún sin evidencia. Sube una captura o enlace a evidencias/ y agrégalo en data/modulos.js."),
     el("h3", "Quiz de " + m.quiz.length + " preguntas")
   );
+  box.replaceChildren(...partes);
 
   // Quiz con retroalimentación inmediata
   const resultado = el("p", null, "fb");
@@ -245,9 +261,12 @@ function abrirFicha(m) {
     box.append(pregunta(q, i + 1, correcta => {
       if (correcta) aciertos++;
       if (++respondidas < m.quiz.length) return;
-      notas[m.id] = aciertos;
+      const previo = notas[m.id] ?? 0;
+      const mejor = Math.max(previo, aciertos);
+      notas[m.id] = mejor;
       store.set("hub-notas", notas);
-      resultado.textContent = "Resultado: " + aciertos + " de " + m.quiz.length + ".";
+      resultado.textContent = "Resultado: " + aciertos + " de " + m.quiz.length + ". " +
+        (aciertos > previo ? "¡Nuevo mejor puntaje!" : "Mejor puntaje: " + mejor + " de " + m.quiz.length + ".");
       pintar();
     }));
   });

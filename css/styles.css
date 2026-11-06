@@ -241,6 +241,11 @@ dialog .docente { color: var(--muted); font-size: .88rem; }
 .nota { color: var(--muted); font-size: .85em; font-style: italic; }
 .nota::before { content: "· "; }
 
+/* Actividades realizadas: lista numerada con marcadores en color de acento */
+dialog ol.acts { margin: .25rem 0; padding-left: 1.4rem; }
+dialog ol.acts li { margin: .35rem 0; padding-left: .2rem; }
+dialog ol.acts li::marker { color: var(--acento); font-weight: 700; }
+
 .cerrar {
   float: right; padding: .35rem .85rem;
   background: var(--card-2); color: var(--txt);
@@ -249,6 +254,8 @@ dialog .docente { color: var(--muted); font-size: .88rem; }
 
 .preg { margin: .8rem 0; padding: 1rem; background: var(--card-2); border: 1px solid var(--line); border-radius: .85rem; }
 .preg > p:first-child { margin: 0 0 .5rem; font-weight: 700; }
+.preg > p.quiz-meta { margin: 0 0 .3rem; color: var(--muted); font-size: .82rem; font-weight: 600; }
+.preg .cta { margin-top: .65rem; }
 
 .op {
   display: block; width: 100%; margin: .35rem 0; padding: .7rem .85rem;
